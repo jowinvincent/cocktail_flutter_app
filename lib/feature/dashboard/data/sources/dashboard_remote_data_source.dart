@@ -1,5 +1,5 @@
 import 'package:cocktail_flutter_app/feature/dashboard/data/model/cocktail_data_response.dart';
-import 'package:cocktail_flutter_app/network/api_service_provider.dart';
+import 'package:cocktail_flutter_app/core/network/api_service_provider.dart';
 
 import '../model/cocktail.dart';
 

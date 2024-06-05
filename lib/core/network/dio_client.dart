@@ -1,4 +1,4 @@
-import 'package:cocktail_flutter_app/network/api_config.dart';
+import 'package:cocktail_flutter_app/core/network/api_config.dart';
 import 'package:dio/dio.dart';
 
 class DioClient {

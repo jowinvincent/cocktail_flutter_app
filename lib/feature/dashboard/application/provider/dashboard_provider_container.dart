@@ -1,4 +1,4 @@
-import 'package:cocktail_flutter_app/network/api_service_provider.dart';
+import 'package:cocktail_flutter_app/core/network/api_service_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/repository/dashboard_repository_impl.dart';
