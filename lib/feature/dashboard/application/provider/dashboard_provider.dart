@@ -1,4 +1,4 @@
-import 'package:cocktail_flutter_app/feature/dashboard/application/providers/dashboard_provider_container.dart';
+import 'package:cocktail_flutter_app/feature/dashboard/application/provider/dashboard_provider_container.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 

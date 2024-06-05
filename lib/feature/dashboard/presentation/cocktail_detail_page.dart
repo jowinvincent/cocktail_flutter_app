@@ -1,5 +1,5 @@
 import 'package:cocktail_flutter_app/feature/dashboard/data/model/cocktail.dart';
-import 'package:cocktail_flutter_app/feature/dashboard/domain/entity/ingredients.dart';
+import 'package:cocktail_flutter_app/feature/dashboard/domain/entity/ingredient.dart';
 import 'package:flutter/material.dart';
 
 class CocktailDetailPage extends StatelessWidget {
@@ -10,7 +10,7 @@ class CocktailDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Text> ingredientList =
-        Ingredients().getIngredients(cocktail).map((ingredient) {
+        Ingredient().getIngredients(cocktail).map((ingredient) {
       if (ingredient.strMeasure != null &&
           ingredient.strIngredientName != null) {}
       return Text(
@@ -18,7 +18,7 @@ class CocktailDetailPage extends StatelessWidget {
       );
     }).toList();
     List<Text> measureList =
-        Ingredients().getIngredients(cocktail).map((ingredient) {
+        Ingredient().getIngredients(cocktail).map((ingredient) {
       if (ingredient.strMeasure != null &&
           ingredient.strIngredientName != null) {}
       return Text(

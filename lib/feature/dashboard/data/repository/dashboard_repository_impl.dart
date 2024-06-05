@@ -1,5 +1,5 @@
 import '../model/cocktail.dart';
-import '../../domain/repositories/dashboard_repository.dart';
+import '../../domain/repository/dashboard_repository.dart';
 import '../sources/dashboard_local_data_source.dart';
 import '../sources/dashboard_remote_data_source.dart';
 

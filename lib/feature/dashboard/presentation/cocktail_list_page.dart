@@ -1,5 +1,6 @@
 import 'package:cocktail_flutter_app/cocktail_flutter_app_route.dart';
-import 'package:cocktail_flutter_app/feature/dashboard/application/providers/dashboard_provider.dart';
+import 'package:cocktail_flutter_app/feature/dashboard/application/provider/dashboard_provider.dart';
+import 'package:cocktail_flutter_app/util/string_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -48,6 +49,13 @@ class _CocktailListPageState extends ConsumerState<CocktailListPage> {
               decoration: InputDecoration(
                 hintText: 'Search for drinks...',
                 prefixIcon: const Icon(Icons.search),
+                suffixIcon: IconButton(
+                  icon: const Icon(Icons.close),
+                  onPressed: () {
+                    _searchController.clear();
+                    ref.read(dashboardProvider.notifier).fetchDrinkList("");
+                  },
+                ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
@@ -85,7 +93,7 @@ class _CocktailListPageState extends ConsumerState<CocktailListPage> {
                     );
                   },
                 )
-              : const Center(child: Text("No results found")),
+              : const Center(child: Text(StringConstant.noResult)),
     );
   }
 }

@@ -1,10 +1,10 @@
 import 'package:cocktail_flutter_app/network/api_service_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../data/repositories/dashboard_repository_impl.dart';
+import '../../data/repository/dashboard_repository_impl.dart';
 import '../../data/sources/dashboard_local_data_source.dart';
 import '../../data/sources/dashboard_remote_data_source.dart';
-import '../../domain/repositories/dashboard_repository.dart';
+import '../../domain/repository/dashboard_repository.dart';
 import '../dashboard_logic.dart';
 
 final localDataSourceRepoProvider = Provider<DashboardLocalDataSource>(

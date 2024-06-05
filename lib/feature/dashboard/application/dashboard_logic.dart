@@ -1,6 +1,6 @@
 import 'package:cocktail_flutter_app/feature/dashboard/data/model/cocktail.dart';
 
-import '../domain/repositories/dashboard_repository.dart';
+import '../domain/repository/dashboard_repository.dart';
 import 'dashboard_usecase.dart';
 
 class DashboardLogic implements DashboardUseCase {

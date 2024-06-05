@@ -1,19 +1,19 @@
 import 'package:cocktail_flutter_app/feature/dashboard/data/model/cocktail.dart';
 
-class Ingredients {
+class Ingredient {
   String? strIngredientName;
   String? strMeasure;
 
-  Ingredients({this.strIngredientName, this.strMeasure});
+  Ingredient({this.strIngredientName, this.strMeasure});
 
-  List<Ingredients> getIngredients(Cocktail cocktail) {
-    List<Ingredients> ingredients = [];
+  List<Ingredient> getIngredients(Cocktail cocktail) {
+    List<Ingredient> ingredients = [];
     for (int i = 1; i <= 15; i++) {
       String? ingredient = _getProperty('strIngredient$i', cocktail);
       String? measure = _getProperty('strMeasure$i', cocktail);
       if (ingredient != null && measure != null) {
         ingredients.add(
-            Ingredients(strIngredientName: ingredient, strMeasure: measure));
+            Ingredient(strIngredientName: ingredient, strMeasure: measure));
       }
     }
     return ingredients;
