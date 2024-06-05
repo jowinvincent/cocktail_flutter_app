@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$DashboardState {
   List<Cocktail>? get cocktailList => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  String get statusMessage => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $DashboardStateCopyWith<DashboardState> get copyWith =>
@@ -30,7 +31,8 @@ abstract class $DashboardStateCopyWith<$Res> {
           DashboardState value, $Res Function(DashboardState) then) =
       _$DashboardStateCopyWithImpl<$Res, DashboardState>;
   @useResult
-  $Res call({List<Cocktail>? cocktailList, bool isLoading});
+  $Res call(
+      {List<Cocktail>? cocktailList, bool isLoading, String statusMessage});
 }
 
 /// @nodoc
@@ -48,6 +50,7 @@ class _$DashboardStateCopyWithImpl<$Res, $Val extends DashboardState>
   $Res call({
     Object? cocktailList = freezed,
     Object? isLoading = null,
+    Object? statusMessage = null,
   }) {
     return _then(_value.copyWith(
       cocktailList: freezed == cocktailList
@@ -58,6 +61,10 @@ class _$DashboardStateCopyWithImpl<$Res, $Val extends DashboardState>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      statusMessage: null == statusMessage
+          ? _value.statusMessage
+          : statusMessage // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -70,7 +77,8 @@ abstract class _$$DashboardStateImplCopyWith<$Res>
       __$$DashboardStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Cocktail>? cocktailList, bool isLoading});
+  $Res call(
+      {List<Cocktail>? cocktailList, bool isLoading, String statusMessage});
 }
 
 /// @nodoc
@@ -86,6 +94,7 @@ class __$$DashboardStateImplCopyWithImpl<$Res>
   $Res call({
     Object? cocktailList = freezed,
     Object? isLoading = null,
+    Object? statusMessage = null,
   }) {
     return _then(_$DashboardStateImpl(
       cocktailList: freezed == cocktailList
@@ -96,6 +105,10 @@ class __$$DashboardStateImplCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      statusMessage: null == statusMessage
+          ? _value.statusMessage
+          : statusMessage // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -104,7 +117,9 @@ class __$$DashboardStateImplCopyWithImpl<$Res>
 
 class _$DashboardStateImpl extends _DashboardState {
   const _$DashboardStateImpl(
-      {final List<Cocktail>? cocktailList, this.isLoading = false})
+      {final List<Cocktail>? cocktailList,
+      this.isLoading = false,
+      this.statusMessage = ""})
       : _cocktailList = cocktailList,
         super._();
 
@@ -121,10 +136,13 @@ class _$DashboardStateImpl extends _DashboardState {
   @override
   @JsonKey()
   final bool isLoading;
+  @override
+  @JsonKey()
+  final String statusMessage;
 
   @override
   String toString() {
-    return 'DashboardState(cocktailList: $cocktailList, isLoading: $isLoading)';
+    return 'DashboardState(cocktailList: $cocktailList, isLoading: $isLoading, statusMessage: $statusMessage)';
   }
 
   @override
@@ -135,12 +153,17 @@ class _$DashboardStateImpl extends _DashboardState {
             const DeepCollectionEquality()
                 .equals(other._cocktailList, _cocktailList) &&
             (identical(other.isLoading, isLoading) ||
-                other.isLoading == isLoading));
+                other.isLoading == isLoading) &&
+            (identical(other.statusMessage, statusMessage) ||
+                other.statusMessage == statusMessage));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType,
-      const DeepCollectionEquality().hash(_cocktailList), isLoading);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(_cocktailList),
+      isLoading,
+      statusMessage);
 
   @JsonKey(ignore: true)
   @override
@@ -153,13 +176,16 @@ class _$DashboardStateImpl extends _DashboardState {
 abstract class _DashboardState extends DashboardState {
   const factory _DashboardState(
       {final List<Cocktail>? cocktailList,
-      final bool isLoading}) = _$DashboardStateImpl;
+      final bool isLoading,
+      final String statusMessage}) = _$DashboardStateImpl;
   const _DashboardState._() : super._();
 
   @override
   List<Cocktail>? get cocktailList;
   @override
   bool get isLoading;
+  @override
+  String get statusMessage;
   @override
   @JsonKey(ignore: true)
   _$$DashboardStateImplCopyWith<_$DashboardStateImpl> get copyWith =>

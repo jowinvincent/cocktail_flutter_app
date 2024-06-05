@@ -13,6 +13,7 @@ abstract class DashboardState with _$DashboardState {
   const factory DashboardState({
     List<Cocktail>? cocktailList,
     @Default(false) bool isLoading,
+    @Default("") String statusMessage,
   }) = _DashboardState;
 
   const DashboardState._();
