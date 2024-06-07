@@ -77,7 +77,7 @@ class _CocktailListPageState extends ConsumerState<CocktailListPage> {
             )
           : dashboardState.cocktailList != null &&
                   dashboardState.cocktailList!.isNotEmpty
-              ? ListView.builder(
+              ? ListView.separated(
                   itemCount: dashboardState.cocktailList!.length,
                   itemBuilder: (context, index) {
                     final cocktail = dashboardState.cocktailList![index];
@@ -90,6 +90,11 @@ class _CocktailListPageState extends ConsumerState<CocktailListPage> {
                         CocktailFlutterAppRoute.cocktailDetailPage,
                         arguments: {'cocktail': cocktail},
                       ),
+                    );
+                  },
+                  separatorBuilder: (_, __) {
+                    return const Divider(
+                      height: 4,
                     );
                   },
                 )
