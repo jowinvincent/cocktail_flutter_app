@@ -5,8 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  runApp(const ProviderScope(
-    child: CocktailFlutterApp(),
-  ));
+  runZonedGuarded(() {
+    WidgetsFlutterBinding.ensureInitialized();
+    runApp(const ProviderScope(
+      child: CocktailFlutterApp(),
+    ));
+  }, (error, stackTrace) {
+    // Handle error
+    debugPrint('Caught error: $error');
+    debugPrint('Stack trace: $stackTrace');
+  });
 }
