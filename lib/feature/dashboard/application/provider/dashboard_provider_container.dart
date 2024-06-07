@@ -1,6 +1,6 @@
-import 'package:cocktail_flutter_app/core/network/api_service_provider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../../core/network/api_service_provider.dart';
 import '../../data/repository/dashboard_repository_impl.dart';
 import '../../data/sources/dashboard_local_data_source.dart';
 import '../../data/sources/dashboard_remote_data_source.dart';
